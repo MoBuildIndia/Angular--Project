@@ -1,0 +1,116 @@
+link the ngx-auth-firebaseui package use gulp globally
+$ gulp link
+use gulp locally
+
+$ npx gulp link
+for some mac os users, you may use the sudo command with gulp use gulp with sudo
+
+$ sudo gulp link
+or locally
+
+$ sudo npx gulp link
+navigate to the demo app directory
+$ cd demo
+
+install the dependencies
+$ npm i
+
+Install this dependencies via npm.
+
+Now install ngx-auth-firebaseui via:
+
+npm install --save ngx-auth-firebaseui
+
+
+Once installed you need to import the main module:
+
+import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+The only remaining part is to list the imported module in your application module. The exact method will be slightly different for the root (top-level) module for which you should end up with the code similar to (notice NgxAuthFirebaseUIModule .forRoot()):
+
+and then from your Angular AppModule:
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// Import your library
+import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+
+    // Specify the ngx-auth-firebaseui library as an import
+    NgxAuthFirebaseUIModule.forRoot({
+                    apiKey: 'your-firebase-apiKey',
+                    authDomain: 'your-firebase-authDomain',
+                    databaseURL: 'your-firebase-databaseURL',
+                    projectId: 'your-firebase-projectId',
+                    storageBucket: 'your-firebase-storageBucket',
+                    messagingSenderId: 'your-firebase-messagingSenderId'
+                }),
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+Other modules in your application can simply import NgxAuthFirebaseUIModule:
+
+import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+
+@NgModule({
+  declarations: [OtherComponent, ...],
+  imports: [NgxAuthFirebaseUIModule, ...],
+})
+export class OtherModule {
+}
+SystemJS
+Note:If you are using SystemJS, you should adjust your configuration to point to the UMD bundle. In your systemjs config file, map needs to tell the System loader where to look for ngx-auth-firebaseui:
+
+map: {
+  'ngx-auth-firebaseui': 'node_modules/ngx-auth-firebaseui/bundles/ngx-auth-firebaseui.umd.js',
+}
+
+
+
+
+
+use your own firebase config use for the NgxAuthFirebaseUIModule
+export const YourFirebaseAppConfig = {
+  apiKey: 'your-firebase-apiKey',
+  authDomain: 'your-firebase-authDomain',
+  databaseURL: 'your-firebase-databaseURL',
+  projectId: 'your-firebase-projectId',
+  storageBucket: 'your-firebase-storageBucket',
+  messagingSenderId: 'your-firebase-messagingSenderId'
+};
+run/start/serve the app
+$ npm run start
+or
+
+$ ng serve --open
+the app is now hosted by http://localhost:4200/
+Development
+To generate all *.js, *.d.ts and *.metadata.json files:
+
+$ npm run build
+To lint all *.ts files:
+
+$ npm run lint
+
+
+
+
+Link For MOre Help:--------
+
+https://github.com/AnthonyNahas/ngx-auth-firebaseui
+
+https://www.npmjs.com/package/ngx-auth-firebaseui
+
+
