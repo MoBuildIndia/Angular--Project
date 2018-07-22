@@ -85,7 +85,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.titleService.setTitle('Home | ngx-auth-firebaseui');
+    this.titleService.setTitle('GBC NETWORKS');
   }
 
   get color(): string {
@@ -108,7 +108,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     // this.snackbar.open(event.message, 'OK', {duration: 5000});
   }
 
-  showMessage() {
+  showMessage() { 
     console.log('on show message');
     const snackbarReference = this.snackbar.open('onConfirmActionButtonClicked\'s event has been emitted', 'See more examples', {
       duration: 3000

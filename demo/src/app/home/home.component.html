@@ -1,24 +1,24 @@
+<html>
+
+<head>
+    <title>GBC Networks</title>
+</head>
 <section class="home">
     <div class="container">
         <div fxLayout="column">
 
             <!--toolbar-->
             <mat-toolbar [color]="color">
-                <span> Angular Project (Mobuild)</span>
+                <span>GBC Networks</span>
                 <span class="demo-fill-remaining"></span>
             </mat-toolbar>
 
 
             <div style="margin: 2rem 0 2rem 0" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center" fxLayoutGap.lt-md="20px" fxLayoutGap="40px">
 
-                <mat-card fxFlex="50">
-
-                    <mat-toolbar>
-                        <div style="color: brown; padding-left: 40%">APP NAME</div>
-                        <span style="width: 100%"></span>
+                <mat-card fxFlex="50" style="background-color: papayawhip">
 
 
-                    </mat-toolbar>
 
                     <mat-card-content *ngIf="viewSourceOfNgxAuthFirebaseuiComponent">
                         <mat-tab-group [color]="color" [selectedIndex]="index">
@@ -36,15 +36,15 @@
                     </mat-card-content>
 
                     <mat-card-content>
-                        <ngx-auth-firebaseui (onSuccess)="printUser($event)" (onError)="printError($event)">
+                        <ngx-auth-firebaseui [guestEnabled]="false" [providers]="[providers.Google, providers.Facebook, providers.Twitter]" (onSuccess)="printUser($event)" (onError)="printError($event)">
                         </ngx-auth-firebaseui>
                     </mat-card-content>
                 </mat-card>
-
-                <mat-card fxFlex="50">
+                <!--
+                    <mat-card fxFlex="50">
 
                     <mat-toolbar>
-                        <div style="color: brown; padding-left: 22%">USER AFTER LOGIN PANEL</div>
+                        <div style="color: brown; ">User Information</div>
                         <span style="width: 100%"></span>
 
 
@@ -52,12 +52,12 @@
 
                     <mat-card-content *ngIf="viewSourceOfTheUserComponent">
                         <mat-tab-group [color]="color" [selectedIndex]="index">
-                            <!--tab 1-->
+                          
                             <mat-tab>
                                 <ng-template mat-tab-label>HTML</ng-template>
                                 <pre><code highlight [code]="userComponent"></code></pre>
                             </mat-tab>
-                            <!--tab 2-->
+                            
                             <mat-tab>
                                 <ng-template mat-tab-label>TS</ng-template>
                                 <pre><code highlight [code]="code"></code></pre>
@@ -69,6 +69,10 @@
                         <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
                     </mat-card-content>
                 </mat-card>
+
+            -->
+
+
             </div>
 
 
@@ -83,3 +87,5 @@
 
     </div>
 </section>
+
+</html>
