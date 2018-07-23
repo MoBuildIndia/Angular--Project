@@ -96,8 +96,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log(event);
     this.error = false;
     this.index = 2;
+    this.router.navigate(['/', 'innerpage']).then(nav => {
+      console.log(nav); // true if navigation is successful
+    }, err => {
+      console.log(err) // when there's an error
+    });
 
-    // this.snackbar.open(`Hallo ${event.displayName ? event.displayName : ''}!`,
+    // this.snackbar.open(`Hello ${event.displayName ? event.displayName : ''}!`,
     //   'OK', {duration: 5000});
   }
 

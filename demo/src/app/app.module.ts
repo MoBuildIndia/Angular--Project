@@ -14,11 +14,16 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 import {NgxMaterialPagesModule} from 'ngx-material-pages';
 import {HttpClientModule} from '@angular/common/http';
 import {ClipboardModule} from 'ngx-clipboard';
+import { InnerpageComponent } from './innerpage/innerpage.component';
+import {MatButtonModule, MatCheckboxModule, MatSlideToggleModule, MatMenuModule} from '@angular/material';
+import { InnerPageRoutingModule } from './innerpage/inner-page-routing.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InnerpageComponent,
   ],
   imports: [
     // Add .withServerTransition() to support Universal rendering.
@@ -42,9 +47,17 @@ import {ClipboardModule} from 'ngx-clipboard';
     AppRoutingModule,
     AppSharedModule,
     HomeModule,
-    NgxAuthFirebaseUIModule
+    NgxAuthFirebaseUIModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    InnerPageRoutingModule,
+    MatSlideToggleModule,
+    MatMenuModule
+
+
   ],
   providers: [],
+  exports: [MatButtonModule, MatCheckboxModule,MatSlideToggleModule,MatMenuModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {

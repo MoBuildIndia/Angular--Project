@@ -1,0 +1,56 @@
+<html>
+
+<head></head>
+<mat-toolbar color="white" class="mat-toolbar-shadow">
+    <span> <img src="https://gbc.fi/wp-content/uploads/2013/01/GBC_networks_logo_kotisivut-300x99.jpg" alt="GBC Networks" height="63px">
+    </span>
+    <span style="font-weight: 700;" class="title-center">PBX Necromancer</span>
+    <span class="example-spacer"></span>
+    <span style="float: right;">username</span>
+    <span style="float: right;" class="example-icon"><button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Sign out</span>
+    </button>
+
+
+    </mat-menu>
+    </span>
+</mat-toolbar>
+<section class="home">
+    <div class="container">
+        <div style="margin: 2rem 0 2rem 0">
+            <div class="pad">
+                <mat-card style="background-color: rgb(146, 247, 238);">All Ring Groups
+                    <mat-slide-toggle style="float: right;"></mat-slide-toggle>
+
+                </mat-card>
+            </div>
+        </div>
+        <div style="margin: 2rem 0 2rem 0">
+
+            <div class="pad">
+                <mat-card style="background-color: rgb(146, 247, 238);" fxflex="80">rg_0942475630
+                    <mat-slide-toggle style="float: right;"></mat-slide-toggle>
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <mat-toolbar fxLayoutAlign="center">
+        <div>
+            Powered By:
+        </div>
+    </mat-toolbar>
+
+</footer>
+
+
+
+</html>
